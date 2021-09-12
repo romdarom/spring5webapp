@@ -36,13 +36,16 @@ public class Author {
         return books;
     }
 
+    public Set<Book> getBookssss() {
+        return books;
+    }
+
     @Override
     public String toString() {
         return "Author{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", books=" + books +
                 '}';
     }
 

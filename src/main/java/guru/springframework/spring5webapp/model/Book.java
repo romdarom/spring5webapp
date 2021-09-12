@@ -13,23 +13,24 @@ public class Book {
     private Long id;
     private String title;
     private String esbn;
-
     @ManyToMany
     @JoinTable(name = "author_book", joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "author_id"))
     private Set<Author> authors = new HashSet<>();
-
     @ManyToOne
     private Publisher publisher;
 
-
     public Book() {
     }
+
 
     public Book(String title, String esbn) {
         this.title = title;
         this.esbn = esbn;
     }
 
+    public Long getId() {
+        return id;
+    }
 
     public Publisher getPublisher() {
         return publisher;
@@ -58,7 +59,7 @@ public class Book {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", esbn='" + esbn + '\'' +
-                ", authors=" + authors +
+                ", publisher=" + publisher +
                 '}';
     }
 
